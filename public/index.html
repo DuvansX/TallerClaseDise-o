@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Personas - V1</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Gestor de Personas (V1 - En Memoria)</h1>
+
+    <!-- Tarjeta de Autenticación con JWT -->
+    <div class="card" id="seccionAuth">
+      <h2>Iniciar Sesión (JWT)</h2>
+      <div id="authMensaje" class="alerta oculto"></div>
+      <div id="contenedorLogin">
+        <form id="formLogin">
+          <input type="text" id="loginUsuario" placeholder="Usuario (ej: admin)" required>
+          <input type="password" id="loginPass" placeholder="Contraseña (ej: 123456)" required>
+          <button type="submit">Ingresar</button>
+        </form>
+        <p style="font-size: 12px; color: #666; margin-top: 8px;">
+          Usuario de prueba predeterminado: <b>admin</b> / <b>123456</b>
+        </p>
+      </div>
+      <div id="contenedorSesion" class="oculto" style="display: flex; justify-content: space-between; align-items: center;">
+        <span>Conectado como: <strong id="lblUsuario"></strong> (Token JWT Activo)</span>
+        <button id="btnCerrarSesion" class="secondary">Cerrar Sesión</button>
+      </div>
+    </div>
+
+    <!-- Formulario Crear Persona -->
+    <div class="card">
+      <h2>Agregar Persona</h2>
+      <form id="formCrear">
+        <input type="text" id="crearNombre" placeholder="Nombre" required>
+        <input type="number" id="crearEdad" placeholder="Edad" min="0" required>
+        <button type="submit">Crear Persona</button>
+      </form>
+    </div>
+
+    <!-- Filtros y Búsqueda -->
+    <div class="card">
+      <h2>Consultas y Filtros</h2>
+      <div class="grid-actions">
+        <div>
+          <input type="number" id="buscarId" placeholder="Buscar por ID">
+          <button id="btnBuscarId">Buscar por ID</button>
+        </div>
+        <div>
+          <input type="text" id="buscarNombre" placeholder="Buscar por Nombre">
+          <button id="btnBuscarNombre">Buscar por Nombre</button>
+        </div>
+        <div>
+          <button id="btnListarTodos" class="btn-listar">📋 Listar Todas las Personas</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resultados -->
+    <div class="card">
+      <h2>Listado de Personas</h2>
+      <div id="mensajeAlerta" class="alerta oculto"></div>
+      <table id="tablaPersonas">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="listaCuerpo">
+          <!-- Datos dinámicos -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,14 @@
+{
+  "name": "servidor-personas-v1",
+  "version": "1.0.0",
+  "description": "Versión 1 en memoria con autenticación JWT y frontend HTML/CSS/JS",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
+
